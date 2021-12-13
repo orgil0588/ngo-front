@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ngo-front/static/css/main.f3a7491e.chunk.css",
+    "main.js": "/ngo-front/static/js/main.c2f0ba7e.chunk.js",
+    "main.js.map": "/ngo-front/static/js/main.c2f0ba7e.chunk.js.map",
+    "runtime-main.js": "/ngo-front/static/js/runtime-main.1065d676.js",
+    "runtime-main.js.map": "/ngo-front/static/js/runtime-main.1065d676.js.map",
+    "static/js/2.4b768593.chunk.js": "/ngo-front/static/js/2.4b768593.chunk.js",
+    "static/js/2.4b768593.chunk.js.map": "/ngo-front/static/js/2.4b768593.chunk.js.map",
+    "index.html": "/ngo-front/index.html",
+    "static/css/main.f3a7491e.chunk.css.map": "/ngo-front/static/css/main.f3a7491e.chunk.css.map",
+    "static/js/2.4b768593.chunk.js.LICENSE.txt": "/ngo-front/static/js/2.4b768593.chunk.js.LICENSE.txt",
+    "static/media/Logo.e2583ffa.svg": "/ngo-front/static/media/Logo.e2583ffa.svg",
+    "static/media/hero-right.80fa556f.png": "/ngo-front/static/media/hero-right.80fa556f.png",
+    "static/media/nibs.e64ea0f9.png": "/ngo-front/static/media/nibs.e64ea0f9.png",
+    "static/media/pexels-andrew-personal-training-697509.f58b197e.jpg": "/ngo-front/static/media/pexels-andrew-personal-training-697509.f58b197e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1065d676.js",
+    "static/js/2.4b768593.chunk.js",
+    "static/css/main.f3a7491e.chunk.css",
+    "static/js/main.c2f0ba7e.chunk.js"
+  ]
+}
