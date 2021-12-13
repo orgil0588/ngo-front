@@ -10,19 +10,12 @@ module.exports = {
         "primary-gray": "#A6AABD",
         "primary-white": "#F7F9FF",
       },
-      margin: {
-        "xl": "100px",
-        "lg": "50px",
-        "md": "30px",
-        "sm": "10px",
-      
-      },
-      padding: {
-        "x": "20px",
-        "y": "10px",
-      
-      
-      },
+     
+      fontFamily: {
+        'exo' : '"Exo 2"'
+      }
+   
+     
     },
   },
   variants: {
