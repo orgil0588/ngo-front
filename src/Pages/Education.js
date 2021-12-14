@@ -23,7 +23,7 @@ function Education() {
           >
             <div className="h-20 w-20 bg-primary-blue mx-auto">Image 1</div>
             <div>
-              МӨНГӨ БА БАНК <br /> САНХҮҮГИЙН СИСТЕМ
+              Мөнгө ба Банк <br /> санхүүгийн систем
             </div>
           </div>
 
@@ -35,7 +35,7 @@ function Education() {
           >
             <div className="h-20 w-20 bg-primary-blue mx-auto">Image 1</div>
             <div>
-              ХУВИЙН САНХҮҮГЭЭ <br /> УДИРДАХ
+              Хувийн санхүүгээ <br /> удирдах
             </div>
           </div>
 
@@ -56,7 +56,7 @@ function Education() {
             }}
           >
             <div className="h-20 w-20 bg-primary-blue mx-auto">Image 1</div>
-            <div>ЗЭЭЛ</div>
+            <div>Зээл</div>
           </div>
 
           <div
@@ -66,7 +66,7 @@ function Education() {
             }}
           >
             <div className="h-20 w-20 bg-primary-blue mx-auto">Image 1</div>
-            <div>ХӨРӨНГӨ ОРУУЛАЛТ</div>
+            <div>Хөрөнгө оруулалт</div>
           </div>
 
           <div
@@ -76,12 +76,12 @@ function Education() {
             }}
           >
             <div className="h-20 w-20 bg-primary-blue mx-auto">Image 1</div>
-            <div>ДААТГАЛ</div>
+            <div>Даатгал</div>
           </div>
         </div>
       </div>
       {link === "mongo-ba-bank-sanhuugiin-system" && (
-        <div  className="flex justify-between">
+        <div  className="block md:flex md:justify-between">
           <div
             onClick={() => {
               setLink("");
@@ -97,39 +97,41 @@ function Education() {
         </div>
       )}
       {link === "huwiin-sanhuugee-udirdah" && (
-        <div>
+        <div className="block md:flex md:justify-between">
           <div
             onClick={() => {
               setLink("");
+              
             }}
+            className="mr-8 cursor-pointer "
           >
-            back
+            Буцах
           </div>
         <PersonalFinance/>
         </div>
       )}
       {link === "hadgalamj" && (
-        <div>
+        <div className="block md:flex md:justify-between">
           <div
             onClick={() => {
               setLink("");
             }}
             className="mr-8 cursor-pointer "
           >
-            back
+            Буцах
           </div>
           <div><Saving /></div>
         </div>
       )}
       {link === "zeel" && (
-        <div>
+        <div className="block md:flex md:justify-between">
           <div
             onClick={() => {
               setLink("");
             }}
             className="mr-8 cursor-pointer "
           >
-            back
+            Буцах
           </div>
           <div>
             <Loan/>
@@ -137,27 +139,27 @@ function Education() {
         </div>
       )}
       {link === "horongo-oruulalt" && (
-        <div>
+        <div className="block md:flex md:justify-between">
           <div
             onClick={() => {
               setLink("");
             }}
             className="mr-8 cursor-pointer "
           >
-            back
+            Буцах
           </div>
           <div>horongo-oruulalt</div>
         </div>
       )}
       {link === "daatgal" && (
-        <div>
+        <div className="block md:flex md:justify-between">
           <div
             onClick={() => {
               setLink("");
             }}
             className="mr-8 cursor-pointer "
           >
-            back
+            Буцах
           </div>
           <div>daatgal</div>
         </div>
