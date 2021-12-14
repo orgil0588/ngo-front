@@ -21,7 +21,7 @@ function Hero() {
                 <img src={Image}/>
             </div>
            </div>
-            <div className="mx-auto text-center"><Partners/></div>
+            <div className="mx-auto text-center">Partners</div>
         </div>
     )
 }

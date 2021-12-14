@@ -1,6 +1,5 @@
 import React from "react";
-import PrimaryBtn from "./PrimaryBtn";
-import SecondaryBtn from "./SecondaryBtn";
+
 function JoinUsItems() {
   return (
     <div className="flex flex-col bg-primary-dark p-10 mt-40  shadow-2xl md:flex-row ">
@@ -9,15 +8,20 @@ function JoinUsItems() {
           Бидэнтэй нэгдэх
         </div>
         <div className="w-full  mt-4 text-primary-gray md:w-10/12">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Бид ашгийн төлөө бус, нийгэмд үйлчилдэг төрийн бус байгууллагын хувьд
+          гишүүнээр элсэхийг хүссэн хүн бүрийг нээлттэй урьж байна. <br />
+          Манай гишүүн болсноор давхар “Хүртээмжтэй Хөгжил” хадгаламж, зээлийн
+          хоршооны гишүүн болж санхүүгийн шинэлэг үйлчилгээг илүү тааламжтай
+          нөхцлөөр авах, санхүү, эдийн засгийн мэдлэг, чадамжаа нэмэгдүүлэх
+          аливаа арга хэмжээнд оролцох зэрэг боломж бүрдэнэ.
         </div>
       </div>
       <div className="w-full md:w-6/12">
         <form className="flex flex-col">
-          <label for="name" className=" font-medium text-md md:text-lg text-primary-white">
+          <label
+            for="name"
+            className=" font-medium text-md md:text-lg text-primary-white"
+          >
             {" "}
             Нэр
           </label>

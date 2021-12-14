@@ -4,7 +4,7 @@ function BankSystem() {
   const [show, setShow] = useState(false);
   console.log(show);
   return (
-    <div className="w-6/12 mx-auto text-primary-gray">
+    <div className="w-full mx-auto text-primary-gray">
       <div className="text-primary-dark font-semibold text-lg mt-4">
         МӨНГӨ БА БАНК САНХҮҮГИЙН СИСТЕМ
       </div>
