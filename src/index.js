@@ -16,6 +16,7 @@ import JoinUs from "./Pages/JoinUs"
 import Background from "./Components/Background"
 import Admin from "./Pages/Admin"
 import News from "./Pages/News"
+import AdminPanel from "./Pages/AdminPanel"
 ReactDOM.render(
   <React.StrictMode>
 <Background>
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Route exact path="/join-us" component={JoinUs} />
         <Route exact path="/admin" component={Admin} />
         <Route  path="/news" component={News} />
+        <Route  path="/adminPanel" component={AdminPanel} />
     
  
   
