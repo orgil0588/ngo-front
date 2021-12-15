@@ -24,7 +24,7 @@ function LatestNews() {
                   setLink(index);
                 }}
               >
-                <div className="bg-primary-gray w-full h-10 md:w-24 h-24">{el.image}</div>
+                <div className="bg-primary-gray w-full h-10 md:w-24 ">{el.image}</div>
                 <div className="flex flex-col justify-between md:ml-4">
                   <div className="flex justify-between text-primary-gray ">
                     <div className="uppercase md:mr-40">{el.category}</div>
