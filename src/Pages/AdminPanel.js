@@ -2,10 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
-import { renderToString } from "react-dom/server";
 
 function AdminPanel() {
-  const [token] = useState(localStorage.token);
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const [news, setNews] = useState(false);
   const [id, setId] = useState();
   const [title, setTitle] = useState();
@@ -15,7 +14,13 @@ function AdminPanel() {
   const [date, setDate] = useState();
   const [datas, setDatas] = useState([]);
   const [link, setLink] = useState();
-
+  //
+  // if (localStorage.getItem("token") === "nFnuhAHa1tZQlz7A8kANLgxLiTW2") {
+  //   setToken("true");
+  // } else {
+  //   setToken("false");
+  // }
+  // console.log(token);
   useEffect(() => {
     axios
       .get(
@@ -60,12 +65,12 @@ function AdminPanel() {
       )
       .then((res) => alert("Success"))
       .catch((err) => alert(err));
-   
   };
 
   return (
     <div className="container w-full mx-auto">
-      {!token && <Redirect to="/" />}
+      {/* {token === true ? <Redirect to="/adminPanel" /> : <Redirect to="/" />} */}
+      {token !== "nFnuhAHa1tZQlz7A8kANLgxLiTW2" && <Redirect to="/" />}
       <header className="flex justify-around py-4 ">
         <div
           className={`cursor-pointer hover:bg-primary-blue py-2 px-4 ${
@@ -184,7 +189,10 @@ function AdminPanel() {
                 </div>
 
                 <div onClick={() => setId(e[0])}>
-                  <div onClick={deleteHandler} className="text-red-400 w-8 h-8 p-1 bg-red-400 bg-opacity-30 rounded-md ml-4">
+                  <div
+                    onClick={deleteHandler}
+                    className="text-red-400 w-8 h-8 p-1 bg-red-400 bg-opacity-30 rounded-md ml-4"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"

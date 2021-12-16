@@ -20,6 +20,7 @@ function Admin() {
       )
       .then((res) => {
         localStorage.setItem("token", res.data.localId);
+   
 
         setError("");
         setToken(res.data.idToken);
