@@ -19,7 +19,6 @@ function Admin() {
         data
       )
       .then((res) => {
-        console.log(res)
         localStorage.setItem("token", res.data.localId);
 
         setError("");
@@ -50,7 +49,7 @@ function Admin() {
             {error}
           </div>
         )}
-        {token &&  <Redirect to ='/adminPanel'/>}
+        {token && <Redirect to="/adminPanel" />}
         <input
           type="submit"
           value="Нэвтрэх"

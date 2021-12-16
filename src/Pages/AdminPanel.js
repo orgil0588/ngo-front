@@ -23,7 +23,8 @@ function AdminPanel() {
       )
       .then((res) => {
         let entries = Object.entries(res.data);
-        setDatas(entries);
+
+        setDatas(entries.reverse());
       })
       .catch((err) => console.log(err));
   }, []);
@@ -53,10 +54,13 @@ function AdminPanel() {
   };
 
   const deleteHandler = () => {
-    axios.delete(
-      `https://ngo-v1-322e0-default-rtdb.asia-southeast1.firebasedatabase.app/news/${id}.json?auth=DhieM1qQLnEpeyz8X8RBNskWWPA8NIt7R4j8nhd5`
-    ).then(res => console.log(res)).catch(err => console.log(err))
-    console.log(id)
+    axios
+      .delete(
+        `https://ngo-v1-322e0-default-rtdb.asia-southeast1.firebasedatabase.app/news/${id}.json?auth=DhieM1qQLnEpeyz8X8RBNskWWPA8NIt7R4j8nhd5`
+      )
+      .then((res) => alert("Success"))
+      .catch((err) => alert(err));
+   
   };
 
   return (
@@ -152,7 +156,7 @@ function AdminPanel() {
         ""
       )}
       {news === false ? (
-        <div className="w-full mx-auto mt-20 md:w-10/12 lg:w-6/12">
+        <div className="w-full mx-auto mt-20 md:w-10/12 lg:w-8/12">
           {datas.map((e, index) => {
             return (
               <div
@@ -161,28 +165,42 @@ function AdminPanel() {
                   setLink(index);
                 }}
               >
-                <div>
+                <div className=" bg-red-400 ">
                   <img
-                    className="w-full h-auto md:w-40"
+                    className="w-auto  md:h-20 mx-auto"
                     src={`data:image/png;base64,${e[1].image}`}
                   />
                 </div>
 
-                <div className="flex flex-col justify-between md:ml-4">
+                <div className="w-10/12 flex flex-col justify-between  md:ml-4">
                   <div className="flex justify-between text-primary-gray ">
                     <div className="uppercase md:mr-40">{e[1].category}</div>
-                    <div className="hidden  md:block">{e[1].createdAt}</div>
+                    <div className="">{e[1].createdAt}</div>
                   </div>
-                  <div className="text-primary-dark font-medium">
+                  <div className="text-primary-dark text-xl font-medium">
                     {e[1].title}
                   </div>
+                  <div></div>
                 </div>
-                <div>
-                  <div onClick={() => setId(e[0])}>
-                    <div onClick={deleteHandler}>Delete</div>
+
+                <div onClick={() => setId(e[0])}>
+                  <div onClick={deleteHandler} className="text-red-400 w-8 h-8 p-1 bg-red-400 bg-opacity-30 rounded-md ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="mx-auto"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                      />
+                    </svg>
                   </div>
-                  <div>Edit</div>
-                  <div>Read</div>
                 </div>
               </div>
             );

@@ -16,7 +16,7 @@ import InsuranceImg from "../image/insurance.png"
 function Education() {
   const [link, setLink] = useState();
 
-  console.log(link);
+  
   return (
     <Container>
       <Navbar />

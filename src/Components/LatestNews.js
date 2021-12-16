@@ -1,52 +1,85 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import Container from "./Container";
-import PrimaryBtn from "./PrimaryBtn";
-import data from "../data/news.json";
+import Navbar from "../Components/Navbar";
+import Container from "../Components/Container";
+import axios from "axios";
+import NewsDetail from "../Components/NewsDetail";
+import Loading from "../Components/Loading";
 function LatestNews() {
-  let datas = [];
-  for (let i = 0; i < 5; i++) {
-    datas.push(data[i]);
-  }
+  const [datas, setDatas] = useState([]);
+  const [link, setLink] = useState();
+  const [detailImage, setDetailImage] = useState();
+  const [detailCategory, setDetailCategory] = useState();
+  const [detailTitle, setDetailTitle] = useState();
+  const [detailCreatedAt, setDetailCreatedAt] = useState();
+  const [detailContent, setDetailContent] = useState();
+  const [loading, setLoading] = useState();
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(
+        "https://ngo-v1-322e0-default-rtdb.asia-southeast1.firebasedatabase.app/news.json"
+      )
+      .then((res) => {
+        let entries = Object.entries(res.data).reverse();
+        let arr = [];
+        // arr.push(entries[0], entries[1], entries[2], entries[3], entries[4]);
+        for (let i = 0; i < 6; i++) {
+          arr.push(entries[i]);
+        }
 
-  const [link, setLink] = useState(null);
+        setDatas(arr);
+        console.log("arr " + arr);
+        console.log("datas " + datas);
+
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
-    <Container>
-      <div className="w-full mx-auto mt-20 md:w-10/12 lg:w-6/12 ">
-        <div className="section-title ">Сүүлчийн нийтлэлүүд</div>
-        {datas.map((el, index) => {
+    <div>
+      <div className="section-title mt-10">Сүүлчийн нийтлэлүүд</div>
+      <div className="w-full mx-auto mt-4 md:w-10/12 grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
+        {datas.map((e, index) => {
           return (
-            <Link to={`news/${el.id}`}>
-              <div
-                className="flex flex-col mt-10 justify-between cursor-pointer text-sm md:flex-row  md:text-lg"
-                onClick={() => {
-                  setLink(index);
-                }}
-              >
-                <div className="bg-primary-gray w-full h-10 md:w-24 ">{el.image}</div>
-                <div className="flex flex-col justify-between md:ml-4">
-                  <div className="flex justify-between text-primary-gray ">
-                    <div className="uppercase md:mr-40">{el.category}</div>
-                    <div className="hidden  md:block">{el.createdAt}</div>
-                  </div>
-                  <div className="text-primary-dark font-medium">
-                    {el.title}
-                  </div>
+            <div
+              onClick={() => {
+                setDetailImage(e[1].image);
+                setDetailCategory(e[1].category);
+                setDetailTitle(e[1].title);
+                setDetailCreatedAt(e[1].createdAt);
+                setDetailContent(e[1].content);
+
+                setLink(e[0]);
+              }}
+              className=""
+            >
+              <Link to={`/news/${e[0]}`}>
+                <div className="grid grid-cols-1 mt-10  cursor-pointer text-sm   ">
+                  <img
+                    className="h-56 w-full bg-contain bg-center"
+                    src={`data:image/png;base64,${e[1].image}`}
+                  />
                 </div>
-              </div>
-            </Link>
+
+                <div className="w-full">
+                  <div className="flex justify-between text-primary-gray my-1 text-xs ">
+                    <div className="uppercase sm:mr-40">{e[1].category}</div>
+
+                    <div className="">{e[1].createdAt}</div>
+                  </div>
+                  <div className="text-primary-dark text-lg font-bold">
+                    {e[1].title}
+                  </div>
+                  <div></div>
+                </div>
+              </Link>
+            </div>
           );
         })}
       </div>
-      <Link to="news">
-        <div className="text-center my-4">
-          <PrimaryBtn text="Бүх мэдээг үзэх" />
-        </div>
-      </Link>
-
-      {link !== null && <div>{datas[link].title}</div>}
-    </Container>
+    </div>
   );
 }
 

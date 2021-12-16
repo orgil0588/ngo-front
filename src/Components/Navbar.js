@@ -92,9 +92,9 @@ function Navbar() {
           </Link>
           <Link
             className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"
-            to="/research"
+            to="/news"
           >
-            Судалгаа
+           Нийтлэл
           </Link>
           <Link
             className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"

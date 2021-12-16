@@ -31,8 +31,8 @@ ReactDOM.render(
         <Route exact path="/research" component={Research} />
         <Route exact path="/join-us" component={JoinUs} />
         <Route exact path="/admin" component={Admin} />
-        <Route  path="/news" component={News} />
-        {/* <Route  path="/news/:id" component={NewsDetail} /> */}
+        <Route  exact path="/news" component={News} />
+        <Route  path="/news/:id" component={NewsDetail} />
 
 
         <Route  path="/adminPanel" component={AdminPanel} />
