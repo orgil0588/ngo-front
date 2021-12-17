@@ -11,8 +11,8 @@ function Footer() {
         <div className="grid grid-cols-4 gap-4">
           <div>
             <img src={Logo} />
-            <div className="text-gray-200 my-2 font-semibold text-lg">
-              Call us : 77111111
+            <div className="text-gray-200 my-6 font-semibold text-lg">
+              Холбогдох дугаар : 77111111
             </div>
             <div className="flex">
               <div className="mr-6">
@@ -81,7 +81,7 @@ function Footer() {
           </div>
           <div>
             <div className="text-primary-white font-semibold text-xl">
-              Company
+              Компани
             </div>
             <ul className="mt-4">
               <li className="text-gray-400 py-1">
@@ -95,7 +95,7 @@ function Footer() {
           </div>
           <div>
             <div className="text-primary-white font-semibold text-xl">
-              Service
+              Үйлчилгээ
             </div>
             <ul className="mt-4">
               <li className="text-gray-400 py-1">
@@ -121,6 +121,7 @@ function Footer() {
           </div>
         </div>
       </Container>
+    
     </div>
   );
 }

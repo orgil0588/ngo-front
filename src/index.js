@@ -7,6 +7,7 @@ import Education from "./Pages/Education";
 import Research from "./Pages/Research";
 import Background from "./Components/Background";
 import News from "./Pages/News";
+import Loading from "./Components/Loading/index"
 const About = React.lazy(() => {
   return import("./Pages/About");
 });
@@ -29,7 +30,7 @@ const AdminPanel = React.lazy(() => {
 ReactDOM.render(
   <React.StrictMode>
     <Background>
-      <Suspense fallback={<div>Түр хүлээнэ үү</div>}>
+      <Suspense fallback={<Loading/>}>
         <Router>
           <Switch>
             <Route exact path="/" component={App} />

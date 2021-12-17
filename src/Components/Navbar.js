@@ -67,37 +67,37 @@ function Navbar() {
           } xl:block`}
         >
           <Link
-            className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"
+            className="px-4 py-2 font-semibold hover:text-primary-blue  hover:border-primary-blue"
             to="/"
           >
             Эхлэл
           </Link>
           <Link
-            className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"
+            className="px-4 py-2 font-semibold hover:text-primary-blue  hover:border-primary-blue"
             to="/about"
           >
             Бидний тухай
           </Link>
           <Link
-            className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"
+            className="px-4 py-2 font-semibold hover:text-primary-blue  hover:border-primary-blue"
             to="/wwd"
           >
             Бид юу хийдэг вэ ?
           </Link>
           <Link
-            className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"
+            className="px-4 py-2 font-semibold hover:text-primary-blue  hover:border-primary-blue"
             to="/financial-education"
           >
             Санхүүгийн боловсрол
           </Link>
           <Link
-            className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"
+            className="px-4 py-2 font-semibold hover:text-primary-blue  hover:border-primary-blue"
             to="/news"
           >
            Нийтлэл
           </Link>
           <Link
-            className="px-4 font-semibold hover:text-primary-blue  hover:border-primary-blue"
+            className="px-4 py-2 font-semibold hover:text-primary-blue  hover:border-primary-blue"
             to="/join-us"
           >
             Бидэнтэй нэгдэх
