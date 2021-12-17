@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Container from "../Components/Container";
 import axios from "axios";
-import NewsDetail from "../Components/NewsDetail";
 import Loading from "../Components/Loading"
+import Footer from "../Components/Footer";
 function News() {
   const [datas, setDatas] = useState([]);
   const [link, setLink] = useState();
@@ -79,6 +79,7 @@ function News() {
           </div>
      
       </Container>
+      <Footer/>
     </div>
   );
 }

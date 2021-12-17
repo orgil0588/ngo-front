@@ -1,14 +1,18 @@
-import React from 'react'
-import Navbar from "../Components/Navbar"
-import Container from "../Components/Container"
-import WhatWeDo from '../Components/WhatWeDo'
-function Wwd(props) {
-    return (
-        <Container>
-            <Navbar/>
-            <WhatWeDo hidden="hidden"/>
-        </Container>
-    )
+import React from "react";
+import Navbar from "../Components/Navbar";
+import Container from "../Components/Container";
+import WhatWeDo from "../Components/WhatWeDo";
+import Footer from "../Components/Footer";
+function Wwd() {
+  return (
+    <>
+      <Container>
+        <Navbar />
+        <WhatWeDo hidden="hidden" />
+      </Container>
+      <Footer />
+    </>
+  );
 }
 
-export default Wwd
+export default Wwd;

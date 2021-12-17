@@ -2,10 +2,10 @@ import React from 'react'
 
 function Background(props) {
     return (
-        <div className="bg-primary-white w-full h-screen font-exo ">
-            <div className=" h-full ">
+        <div className="bg-primary-white w-full h-full font-exo ">
+       
             {props.children}
-            </div>
+            
 
         </div>
     )

@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../Components/Navbar";
-import Container from "../Components/Container";
 import axios from "axios";
-import NewsDetail from "../Components/NewsDetail";
-import Loading from "../Components/Loading";
+
 function LatestNews() {
   const [datas, setDatas] = useState([]);
   const [link, setLink] = useState();
@@ -23,14 +20,11 @@ function LatestNews() {
       .then((res) => {
         let entries = Object.entries(res.data).reverse();
         let arr = [];
-        // arr.push(entries[0], entries[1], entries[2], entries[3], entries[4]);
         for (let i = 0; i < 6; i++) {
           arr.push(entries[i]);
         }
 
         setDatas(arr);
-        console.log("arr " + arr);
-        console.log("datas " + datas);
 
         setLoading(false);
       })
@@ -44,6 +38,7 @@ function LatestNews() {
         {datas.map((e, index) => {
           return (
             <div
+              key={index}
               onClick={() => {
                 setDetailImage(e[1].image);
                 setDetailCategory(e[1].category);

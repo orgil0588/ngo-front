@@ -4,7 +4,7 @@ import Container from "../Components/Container";
 import Batsukh from "../image/batsuh.png";
 import Munkhtsog from "../image/munkhtsog.png";
 import Batpurew from "../image/batpurew.png";
-
+import Footer from "../Components/Footer";
 function About() {
   return (
     <div className="bg-primary-white">
@@ -60,7 +60,7 @@ function About() {
             Удирдах зөвлөлийн гишүүд
           </div>
           <div className="w-full grid grid-cols-1 gap-4 mx-auto md:w-10/12 lg:grid-cols-2 xl:w-full xl:grid-cols-3 ">
-            <div className="mx-4 flex flex-col  mx-auto items-center">
+            <div className="flex flex-col mx-auto items-center">
               <img className="w-60 h-60 rounded-full my-4" src={Batsukh} />
               <div className="text-center">
                 <div className="font-medium text-primary-dark text-lg mb-4">
@@ -74,7 +74,7 @@ function About() {
                 </div>
               </div>
             </div>
-            <div className="mx-4 flex flex-col  mx-auto items-center">
+            <div className="flex flex-col  mx-auto items-center">
               <img className="w-60 h-60 rounded-full my-4" src={Munkhtsog} />
               <div className="text-center">
                 <div className="font-medium text-primary-dark text-lg mb-4">
@@ -89,7 +89,7 @@ function About() {
                 </div>
               </div>
             </div>
-            <div className="mx-4 flex flex-col  mx-auto items-center">
+            <div className="flex flex-col  mx-auto items-center">
               <img className="w-60 h-60 rounded-full my-4" src={Batpurew} />
               <div className="text-center">
                 <div className="font-medium text-primary-dark text-lg mb-4">
@@ -108,10 +108,10 @@ function About() {
                 </div>
               </div>
             </div>
-           
           </div>
         </div>
       </Container>
+      <Footer />
     </div>
   );
 }

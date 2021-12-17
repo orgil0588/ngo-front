@@ -19,7 +19,7 @@ function Navbar() {
         <div
           onClick={() => {
             setIsOpen(!isOpen);
-            console.log(!isOpen);
+            
           }}
           className="cursor-pointer absolute top-5  right-12 xl:hidden"
         >

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 function AdminPanel() {
@@ -14,13 +14,7 @@ function AdminPanel() {
   const [date, setDate] = useState();
   const [datas, setDatas] = useState([]);
   const [link, setLink] = useState();
-  //
-  // if (localStorage.getItem("token") === "nFnuhAHa1tZQlz7A8kANLgxLiTW2") {
-  //   setToken("true");
-  // } else {
-  //   setToken("false");
-  // }
-  // console.log(token);
+
   useEffect(() => {
     axios
       .get(
@@ -55,7 +49,6 @@ function AdminPanel() {
       )
       .then((res) => setNews(false))
       .catch((err) => console.log(err));
-    // window.location.reload();
   };
 
   const deleteHandler = () => {
@@ -69,7 +62,6 @@ function AdminPanel() {
 
   return (
     <div className="container w-full mx-auto">
-      {/* {token === true ? <Redirect to="/adminPanel" /> : <Redirect to="/" />} */}
       {token !== "nFnuhAHa1tZQlz7A8kANLgxLiTW2" && <Redirect to="/" />}
       <header className="flex justify-around py-4 ">
         <div
@@ -143,11 +135,6 @@ function AdminPanel() {
               onChange={(e) => setDate(e.target.value)}
             />
 
-            {/* {error && (
-          <div className="py-2 px-6 bg-red-400 bg-opacity-10 text-red-400 font-semibold mt-10">
-            {error}
-          </div>
-        )} */}
             {token && <Redirect to="/adminPanel" />}
             <input
               type="submit"
@@ -172,6 +159,7 @@ function AdminPanel() {
               >
                 <div className=" bg-red-400 ">
                   <img
+                    key={index}
                     className="w-auto  md:h-20 mx-auto"
                     src={`data:image/png;base64,${e[1].image}`}
                   />
@@ -179,19 +167,27 @@ function AdminPanel() {
 
                 <div className="w-10/12 flex flex-col justify-between  md:ml-4">
                   <div className="flex justify-between text-primary-gray ">
-                    <div className="uppercase md:mr-40">{e[1].category}</div>
-                    <div className="">{e[1].createdAt}</div>
+                    <div className="uppercase md:mr-40" key={index}>
+                      {e[1].category}
+                    </div>
+                    <div className="" key={index}>
+                      {e[1].createdAt}
+                    </div>
                   </div>
-                  <div className="text-primary-dark text-xl font-medium">
+                  <div
+                    className="text-primary-dark text-xl font-medium"
+                    key={index}
+                  >
                     {e[1].title}
                   </div>
                   <div></div>
                 </div>
 
-                <div onClick={() => setId(e[0])}>
+                <div key={index} onClick={() => setId(e[0])}>
                   <div
                     onClick={deleteHandler}
                     className="text-red-400 w-8 h-8 p-1 bg-red-400 bg-opacity-30 rounded-md ml-4"
+                    key={index}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
