@@ -25,9 +25,8 @@ function Hero() {
               <PrimaryBtn text="Санхүүгийн боловсрол" />
             </Link>
             <Link to="/join-us">
-            <SecondaryBtn text="Бидэнтэй нэгдэх" />
+              <SecondaryBtn text="Бидэнтэй нэгдэх" />
             </Link>
-           
           </div>
         </div>
         <div className="mx-4 w-10/12 md:mx-0 ">

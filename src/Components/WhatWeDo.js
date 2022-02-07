@@ -18,8 +18,8 @@ function whatWeDo(props) {
       <div className="flex flex-col lg:flex-row  justify-evenly ">
         <div className="w-full mx-auto md:w-10/12 lg:w-8/12 xl:4/12   text-center my-4">
           <div>
-            <img className='mx-auto' src={Teach} />
-          </div> 
+            <img className="mx-auto" src={Teach} />
+          </div>
           <div className="text-xl text-primary-dark font-semibold">
             Бид сургаж зөвлөдөг
           </div>
@@ -37,8 +37,8 @@ function whatWeDo(props) {
         </div>
         <div className="w-full mx-auto md:w-10/12 lg:w-8/12 xl:4/12 text-center my-4">
           <div>
-            <img className='mx-auto' src={Grow} />
-          </div> 
+            <img className="mx-auto" src={Grow} />
+          </div>
           <div className="text-xl text-primary-dark font-semibold">
             Бид санхүүгийн үйлчилгээг хөгжүүлдэг
           </div>
@@ -57,7 +57,7 @@ function whatWeDo(props) {
         <div className="w-full mx-auto md:w-10/12 lg:w-8/12 xl:4/12 text-center my-4">
           <div>
             {" "}
-            <img className='mx-auto' src={Effect} />
+            <img className="mx-auto" src={Effect} />
           </div>
           <div className="text-xl text-primary-dark font-semibold mt-4">
             Бид нөлөөлдөг
@@ -77,7 +77,7 @@ function whatWeDo(props) {
         <div className="w-full mx-auto md:w-10/12 lg:w-8/12 xl:4/12 text-center my-4">
           <div>
             {" "}
-            <img className='mx-auto' src={Partner} />
+            <img className="mx-auto" src={Partner} />
           </div>
           <div className="text-xl text-primary-dark font-semibold mt-4">
             Бид хамтран ажилладаг

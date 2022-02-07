@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function LatestNews() {
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState("");
   const [link, setLink] = useState();
   const [detailImage, setDetailImage] = useState();
   const [detailCategory, setDetailCategory] = useState();
@@ -19,6 +19,7 @@ function LatestNews() {
       )
       .then((res) => {
         let entries = Object.entries(res.data).reverse();
+        console.log(entries);
         let arr = [];
         for (let i = 0; i < 6; i++) {
           arr.push(entries[i]);
@@ -35,44 +36,49 @@ function LatestNews() {
     <div>
       <div className="section-title mt-10">Сүүлчийн нийтлэлүүд</div>
       <div className="w-full mx-auto mt-4 md:w-10/12 grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
-        {datas.map((e, index) => {
-          return (
-            <div
-              key={index}
-              onClick={() => {
-                setDetailImage(e[1].image);
-                setDetailCategory(e[1].category);
-                setDetailTitle(e[1].title);
-                setDetailCreatedAt(e[1].createdAt);
-                setDetailContent(e[1].content);
+        {datas === "" ? console.log(true) : console.log(false)}
+        {datas !== "" ? (
+          datas.map((e, index) => {
+            return (
+              <div
+                key={index}
+                onClick={() => {
+                  setDetailImage(e[1].image);
+                  setDetailCategory(e[1].category);
+                  setDetailTitle(e[1].title);
+                  setDetailCreatedAt(e[1].createdAt);
+                  setDetailContent(e[1].content);
 
-                setLink(e[0]);
-              }}
-              className=""
-            >
-              <Link to={`/news/${e[0]}`}>
-                <div className="grid grid-cols-1 mt-10  cursor-pointer text-sm   ">
-                  <img
-                    className="h-56 w-full bg-contain bg-center"
-                    src={`data:image/png;base64,${e[1].image}`}
-                  />
-                </div>
-
-                <div className="w-full">
-                  <div className="flex justify-between text-primary-gray my-1 text-xs ">
-                    <div className="uppercase sm:mr-40">{e[1].category}</div>
-
-                    <div className="">{e[1].createdAt}</div>
+                  setLink(e[0]);
+                }}
+                className=""
+              >
+                {/* <Link to={`/news/${e[0]}`}>
+                  <div className="grid grid-cols-1 mt-10  cursor-pointer text-sm   ">
+                    <img
+                      className="h-56 w-full bg-contain bg-center"
+                      src={`data:image/png;base64,${e[1].image}`}
+                    />
                   </div>
-                  <div className="text-primary-dark text-lg font-bold">
-                    {e[1].title}
+
+                  <div className="w-full">
+                    <div className="flex justify-between text-primary-gray my-1 text-xs ">
+                      <div className="uppercase sm:mr-40">{e[1].category}</div>
+
+                      <div className="">{e[1].createdAt}</div>
+                    </div>
+                    <div className="text-primary-dark text-lg font-bold">
+                      {e[1].title}
+                    </div>
+                    <div></div>
                   </div>
-                  <div></div>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
+                </Link> */}
+              </div>
+            );
+          })
+        ) : (
+          <div className="text-center">Нийтлэл хоосон байна</div>
+        )}
       </div>
     </div>
   );
